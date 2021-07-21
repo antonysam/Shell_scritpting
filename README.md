@@ -1,4 +1,4 @@
-# Shell_scritpting
+# Shell_scripting
 Basics of shell scripting
 
 _Shell_
