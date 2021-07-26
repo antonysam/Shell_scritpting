@@ -1,5 +1,7 @@
 # OR
 
+satisfies when any one condition becomes true
+
 `||` used in the below syntax
 
 # Syntax
