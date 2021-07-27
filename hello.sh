@@ -51,7 +51,7 @@ echo $PWD  # Present working dir
 #echo $#
 
 # IF Then 
-<<com
+
 count=10
 if [ $count == 10 ] 
 then
@@ -115,4 +115,36 @@ echo "sub: "$(expr $num1 - $num2 )
 echo "mul: "$(expr $num1 \* $num2 ) # for * alone we need to use "\*"
 echo "div: "$(expr $num1 / $num2 )
 echo "mod: "$(expr $num1 % $num2 )
-com
+
+
+# Arithmetic operations using floating points
+
+echo -e "Enter two decimal numbers: \c"
+read num1 num2
+
+echo "$num1 + $num2" | bc
+echo "$num1 - $num2" | bc
+# Displays the numbers after the decimal point
+echo "scale=5; $num1/$num2" | bc
+
+# Square root calculation -l for calling the math library
+echo "sqrt($num1)" | bc -l
+
+# Cubing a number
+echo "$num^3" | bc -l
+
+
+# case statements
+echo -e "Enter a vehicle present in the list (car, van, bike): \c"
+read vehicle
+
+case $vehicle in
+     "car" )
+       echo "Rent of $vehicle is Rs.5000" ;;
+      "van" )
+      echo "Rent of $vehicle is Rs.2500" ;;
+      "bike" )
+      echo "Rent of $vehicle is Rs.1500" ;;
+      * )
+      echo "Unknown vehicle" ;;
+esac
