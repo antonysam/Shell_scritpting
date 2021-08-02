@@ -148,3 +148,43 @@ case $vehicle in
       * )
       echo "Unknown vehicle" ;;
 esac
+
+# case statements
+# case statement with some patterns
+
+echo -e "Enter some character: \c"
+read value
+
+case $value in
+      [a-z] )
+         echo "User entered $value a to z" ;;
+      [A-Z] )
+         echo "User entered $value A to Z" ;;
+      [0-9] )
+         echo "User entered $value 0 to 9" ;;
+      ? )
+         echo "User entered $value special character" ;;
+      * )
+         echo "Unknown input" ;;
+esac
+com
+
+os=('ubuntu' 'windows' 'kali')
+
+# Display the contetnt in the array
+echo "${os[@]}"
+# Display the first array variable
+echo "${os[0]}"
+# Display the indicies of the array variable
+echo "${!os[@]}"
+# Display the length of the array
+echo "${#os[@]}"	
+# Remove element from an array
+unset os[2]
+# considering any variable as array
+name=sjdfdfdbf
+echo "${name[@]}"
+echo "${name[0]}"
+echo "${name[1]}"
+
+
