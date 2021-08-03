@@ -187,4 +187,39 @@ echo "${name[@]}"
 echo "${name[0]}"
 echo "${name[1]}"
 
+num=1
+while (( $num <= 10 ))
+do 
+   echo "$num"
+   #num=$(( num+1 ))
+   (( num++ ))
+done
 
+# There are two types of terminals gnome-terminal and xterm 
+num=1
+while (( $num <= 10 ))
+do 
+   echo "$num"
+   #num=$(( num+1 ))
+   (( num++ ))
+   gnome-terminal &
+done
+
+
+num=1
+while (( $num <= 10 ))
+do 
+   echo "$num"
+   #num=$(( num+1 ))
+   (( num++ ))
+   xterm &
+done
+
+# while with comparision flag
+num =1
+while [ $num -le 10 ]
+do 
+  echo "$num"
+  (( ++num ))
+  
+done
