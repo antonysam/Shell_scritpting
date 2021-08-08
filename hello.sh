@@ -223,3 +223,52 @@ do
   (( ++num ))
   
 done
+
+# reading a file using while loop using output redirection
+while read p
+do
+  echo $p
+done < readfile.sh
+
+# reading the file in the single variable
+cat readfile.sh | while read p
+do 
+  echo $p
+done
+
+# IFS -> Internal Field Seperator
+# Prevents the backslash or esc interpretation
+while IFS= read -r line
+do 
+  echo $line
+done < readfile.sh 
+
+# Read the host.conf file using IFS
+while IFS='' read -r fline
+do
+  echo $fline
+done < /etc/host.conf
+
+# until loops
+# syntax
+<< com
+until [ condition ]
+do
+  command1
+  command2
+  ...
+  ....
+  commandN
+done
+com
+
+# print the n numbers using until loop
+echo -e " enter the number not greater than 10 :\c "
+read no
+until [ $no -ge 10 ]
+do
+  echo $no
+  #no=$(( no+1 ))
+  (( ++no ))
+done
+ 
