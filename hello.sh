@@ -271,4 +271,72 @@ do
   #no=$(( no+1 ))
   (( ++no ))
 done
- 
+
+<< com
+for ((<"initialize variable">;<"condition">;<"incrementation">))
+do
+   command1
+   command2
+   command3
+done
+com
+
+<<com	
+for i in 1 2 3
+do
+  echo $i
+done
+com
+
+<<com
+for i in {1..10}
+do
+  echo $i
+done
+com
+
+<<com
+echo ${BASH_VERSION}
+for i in {1..10..2} #{START..END..INCREMENT} #this syntax will work in version 4 and above
+do
+  echo $i
+done
+com
+
+<<com
+for(( i=0;i<5;i++))
+do
+  echo $i
+done
+com
+
+<<com
+# Using for loop with a scenario
+# Executing the commands using the loop
+for command in ls pwd date
+do
+  echo "-----------$command-------------"
+  $command
+done
+com
+
+# Displaying the files using for loop
+<<com
+for item in *
+do 
+  if [ -d $item ]
+  then
+    echo $item
+   fi
+done 
+com
+
+<<com
+for item in *
+do
+  if [ -f $item ]
+  then
+    echo $item
+   fi
+done
+com
