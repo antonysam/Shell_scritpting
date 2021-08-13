@@ -340,3 +340,63 @@ do
    fi
 done
 com
+
+<<com
+select name in list
+do
+  command1
+  command2
+  ....
+  ......
+  CommandN
+done
+com
+
+<<com
+# Displays the list in the numbered format
+
+select name in Sam Dany Rajan
+do
+  echo "$name selected"
+done
+com
+
+<<com
+# Using cases in the select loop
+
+select name in Sam Dany Rajan
+do 
+  case $name in
+  Sam)
+   echo Sam selected;;
+  Dany)
+   echo Dany selected;;
+  Rajan)
+   echo Rajan selected;;
+  *)
+   echo "Error please provide the no between 1..3"
+  esac
+done
+com
+
+<<com
+# When i's value exceeds more than 5 the loop breaks
+for (( i=1 ; i<=10 ; i++ ))
+do
+  if [ $i -gt 5 ] 
+  then
+   break
+  fi
+  echo "$i"
+done
+com
+
+# When i's value is equal to 3 or 6 the loop will not print 3 or 6 in the console 
+for (( i=1 ; i<=10 ; i++ ))
+do
+  if [ $i -eq 3 -o $i -eq 6 ]
+  then
+    continue
+  fi 
+  echo "$i"
+done
